@@ -19,6 +19,9 @@
         <select class="custom-select" id="gender">
           <option value="semua">Semua</option>
         </select>
+        <div class="input-group-prepend">
+          <button id="btn-notif" class="btn btn-primary" type="button">Notification</button>
+        </div>
       </div>
 
       <div class="list-group" id="mhs-list" style="margin-bottom: 20px;">
@@ -116,6 +119,10 @@
                })
             }
          }
+
+         $(document).on('click', '#btn-notif', function(){
+            displayNotification();
+         })
       });
    </script>
    <script src="sw.js"></script>
