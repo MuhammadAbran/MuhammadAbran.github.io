@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="manifest" href="./manifest.json">
    <title>Document</title>
 </head>
 <body>
@@ -100,6 +101,7 @@
          });
 
          function displayNotification(){
+            console.log(Notification.permission);
             if (Notification.permission === 'granted') {
                navigator.serviceWorker.getRegistration().then(function(reg){
                   var options = {
@@ -110,21 +112,20 @@
                         dateOfArrival: Date.now(),
                         primaryKey: 1
                      },
-                     action: [
+                     actions: [
                         { action: 'explore', title: 'Kunjungi situs' },
                         { action: 'close', title: 'Tutup' }
                      ]
                   }
                   reg.showNotification('Judul Notifikasi', options);
                })
-            }else {
-               console.log("error");
             }
          }
 
-         $('.btnn-notif').on('click', function(){
+         $(document).on('click', '.btnn-notif', function(){
             displayNotification();
          });
+
       });
    </script>
    <script src="sw.js"></script>
