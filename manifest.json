@@ -1,0 +1,12 @@
+{
+  "name": "Data Mahasiswa",
+  "short_name": "Data Mahasiswa",
+  "theme_color": "#2196f3",
+  "background_color": "#ffffff",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "Scope": "/",
+  "start_url": "/",
+  "icons": null,
+  "splash_pages": null
+}
