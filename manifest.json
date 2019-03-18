@@ -10,9 +10,12 @@
   "icons": [
      {
      "src": "./img/img-ico.png",
-     "type": "image/png",
-     "sizes": "48x48"
-    }
+     "type": "image/png"
+  },
+  {
+  "src": "./img/img.png",
+  "type": "image/png"
+}
  ],
   "splash_pages": null
 }
