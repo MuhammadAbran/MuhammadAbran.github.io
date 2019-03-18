@@ -9,8 +9,10 @@
   "start_url": "/",
   "icons": [
      {
-        "src": "./img/img.png"
-     }
+     "src": "./img/img-ico.png",
+     "type": "image/png",
+     "sizes": "48x48"
+    }
  ],
   "splash_pages": null
 }
