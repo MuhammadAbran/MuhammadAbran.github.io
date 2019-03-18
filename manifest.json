@@ -12,7 +12,12 @@
      "src": "./img/img-ico.png",
      "type": "image/png",
      "sizes": "48x48"
-   } 
+  },
+  {
+  "src": "./img/img-ico.png",
+  "type": "image/png",
+  "sizes": "192x192"
+   }
  ],
   "splash_pages": null
 }
