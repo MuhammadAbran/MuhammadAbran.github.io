@@ -68,7 +68,22 @@ self.addEventListener('fetch', function(event){
    //       return fetch(event.request);
    //    })
    // )
-})
+});
+
+//Event Click Notification
+self.addEventListener('notificationclick', function(e){
+   var notification = e.notification;
+   var primaryKey = notification.data.primaryKey;
+   var action = e.action;
+   console.log(primaryKey);
+
+   if (action == 'close') {
+      notification.close();
+   }else {
+      clients.openWindow('http://muhammadabran.github.io');
+      notification.close();
+   }
+});
 
 //register serviceWorker
 if ('serviceWorker' in navigator) {

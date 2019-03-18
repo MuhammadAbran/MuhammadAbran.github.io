@@ -105,7 +105,7 @@
             if (Notification.permission === 'granted') {
                navigator.serviceWorker.getRegistration().then(function(reg){
                   var options = {
-                     body: 'Ini Body Notifikasi',
+                     body: 'Kunjungi Situs Data Mahasiswa Kami!',
                      icon: './img/img.png',
                      vibrate: [100, 50, 100],
                      data: {
@@ -113,11 +113,11 @@
                         primaryKey: 1
                      },
                      actions: [
-                        { action: 'explore', title: 'Kunjungi situs' },
+                        { action: 'explore', title: 'Kunjungi' },
                         { action: 'close', title: 'Tutup' }
                      ]
                   }
-                  reg.showNotification('Judul Notifikasi', options);
+                  reg.showNotification('Data Mahasiswa', options);
                })
             }
          }
