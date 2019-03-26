@@ -1,11 +1,12 @@
-var CACHE_NAME = 'pwa_cache-v1';
+var CACHE_NAME = 'kuis_cache-v1';
 var urlsToCache = [
    './',
    './css/bootstrap.min.css',
    './css/main.css',
    './js/bootstrap.min.js',
    './j.js',
-   './img/img.png'
+   './img/img.png',
+   './img/img-ico.png'
 ];
 
 self.addEventListener('install', function(event) {
@@ -46,7 +47,7 @@ self.addEventListener('fetch', function(event){
       )
    }else {
       event.respondWith(
-         caches.open('list-mahasiswa-cache-v1').then(function(cache){
+         caches.open('kuis-2-cache-v1').then(function(cache){
             return fetch(request).then(function(liveRequest){
                cache.put(request, liveRequest.clone());
                return liveRequest;

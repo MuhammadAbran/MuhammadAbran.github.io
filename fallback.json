@@ -1,7 +1,3 @@
-[
-   {
-      "id": 1,
-      "name": "Anda Sedang Offline...",
-      "gender": "Reload The page"
-   }
-]
+{
+   "Message": "Anda Offline"
+}
