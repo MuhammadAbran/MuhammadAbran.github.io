@@ -8,6 +8,7 @@ label, a {
 .title {
     color: #ffffff;
     padding : 30px 30px;
+    font-size: 40px;
 }
 
 input {

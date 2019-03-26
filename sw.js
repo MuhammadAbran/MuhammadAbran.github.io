@@ -2,6 +2,7 @@ var CACHE_NAME = 'pwa_cache-v1';
 var urlsToCache = [
    './',
    './css/bootstrap.min.css',
+   './css/main.css',
    './js/bootstrap.min.js',
    './j.js',
    './img/img.png'

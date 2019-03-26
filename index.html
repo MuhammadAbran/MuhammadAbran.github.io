@@ -4,31 +4,33 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href="css/bootstrap.min.css">
-   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="./css/bootstrap.min.css">
+   <link rel="stylesheet" href="./css/main.css">
    <link rel="manifest" href="./manifest.json">
    <title>Document</title>
 </head>
 <body>
-   <div class="container">
       <br>
-      <h3 class="title" style="text-align: center">LOGIN</h3><br>
-      <form>
-         <div class="form-group">
-           <label for="Email" class="font-weight-bold">Email address</label>
-           <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
-         </div>
-         <div class="form-group">
-           <label for="Password" class="font-weight-bold">Password</label>
-           <input type="password" class="form-control" id="Password">
-         </div>
-         <div class="form-group">
-            <a href="#" class="font-weight-bold" style="text-align: right">Forget Password?</a>
-         </div>
-         <button type="submit" class="btn" >Log In</button>
-       </form>
-   </div>
-
+      <h3 class="text-center title">LOGIN</h3><br>
+      <div class="container" style="width: 85%">
+         <form>
+            <div class="form-group">
+              <label for="Email" class="font-weight-bold">Email address</label>
+              <input type="email" class="form-control" style="color: white" id="Email" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+              <label for="Password" class="font-weight-bold">Password</label>
+              <input type="password" style="color: white" class="form-control" id="Password">
+            </div>
+            <div class="text-right">
+               <a href="#" style="font-weight: bold">Forget Password?</a>
+            </div>
+            <br><br>
+            <div class="text-center">
+               <button type="submit" class="btn btn-lg" style="font-size: 20px">Log In</button>
+            </div>
+         </form>
+      </div>
    <script src="j.js" charset="utf-8"></script>
    <script src="sw.js"></script>
 </body>
