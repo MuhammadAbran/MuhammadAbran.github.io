@@ -5,129 +5,31 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/main.css">
    <link rel="manifest" href="./manifest.json">
    <title>Document</title>
 </head>
 <body>
    <div class="container">
       <br>
-      <img src="./img/img.png" alt="img" width="150px" style="display: block" height="150px" class="mx-auto">
-      <h3 class="text-muted" style="text-align: center">DATA MAHASISWA</h3><br>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary" type="button">Gender</button>
-        </div>
-        <select class="custom-select" id="gender">
-          <option value="semua">Semua</option>
-        </select>
-        <div class="input-group-prepend">
-          <button class="btn btn-primary btnn-notif" type="button">Notification</button>
-        </div>
-      </div>
-
-      <div class="list-group" id="mhs-list" style="margin-bottom: 20px;">
-         <a href="#" class="list-group-item list-group-item-action">Loading ...</a>
-      </div>
+      <h3 class="title" style="text-align: center">LOGIN</h3><br>
+      <form>
+         <div class="form-group">
+           <label for="Email" class="font-weight-bold">Email address</label>
+           <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+         </div>
+         <div class="form-group">
+           <label for="Password" class="font-weight-bold">Password</label>
+           <input type="password" class="form-control" id="Password">
+         </div>
+         <div class="form-group">
+            <a href="#" class="font-weight-bold" style="text-align: right">Forget Password?</a>
+         </div>
+         <button type="submit" class="btn" >Log In</button>
+       </form>
    </div>
 
    <script src="j.js" charset="utf-8"></script>
-   <script type="text/javascript">
-      var url = "https://my-json-server.typicode.com/techtona/latihan_pwa_api/mahasiswa";
-      // var url = "http://localhost/API";
-      $(document).ready(function(){
-         var result = '';
-         var gend_opt = '';
-         var gender = [];
-         // $.getJSON(url, function(data){
-         function renderPage(data){
-            $.each(data, function(i, items){
-               _gender = items.gender;
-
-               result += '<a class="list-group-item list-group-item-action">' + '<p><b>' + items.name + '</b></p>' + '<p>' + _gender + '</p></a>';
-
-               if($.inArray(_gender, gender) === -1){
-                  gender.push(_gender);
-                  gend_opt += '<option value="'+_gender+'">'+_gender+'</option>';
-               }
-            });
-            $('#mhs-list').html(result);
-            $('#gender').html('<option value="semua">Semua</option>' + gend_opt);
-         };
-
-         var networkDataReceive = false;
-         var networkUpdate = fetch(url).then(function(response){
-            return response.json();
-         }).then(function(data){
-            networkDataReceive = true;
-            renderPage(data);
-         });
-
-         //fetch data dari cache
-         caches.match(url).then(function(response){
-            if(!response) throw Error("No Data on Cache!");
-            return response.json()
-         }).then(function(data){
-            if (!networkDataReceive) {
-               renderPage(data);
-               console.log("Render Data From Cache...");
-            }
-         }).catch(function(){
-            return networkUpdate;
-         });
-
-         $('#gender').on('change', function(){
-            updatelist($(this).val());
-         });
-
-         function updatelist(option){
-            if (option == 'semua') {
-               var new_url = url;
-            }else {
-               var new_url = url + '?gender='+option;
-            }
-            var result = '';
-            $.getJSON(new_url, function(data){
-               $.each(data, function(i, items){
-                  _gender = items.gender;
-
-                  result += '<a class="list-group-item list-group-item-action">' + '<p><b>' + items.name + '</b></p>' + '<p>' + _gender + '</p></a>';
-               });
-               $('#mhs-list').html(result);
-            });
-         }
-
-         Notification.requestPermission(function(status){
-            console.log('Notification Permission Status : ' , status);
-         });
-
-         function displayNotification(){
-            console.log(Notification.permission);
-            if (Notification.permission === 'granted') {
-               navigator.serviceWorker.getRegistration().then(function(reg){
-                  var options = {
-                     body: 'Kunjungi Situs Data Mahasiswa Kami!',
-                     icon: './img/img.png',
-                     vibrate: [100, 50, 100],
-                     data: {
-                        dateOfArrival: Date.now(),
-                        primaryKey: 1
-                     },
-                     actions: [
-                        { action: 'explore', title: 'Kunjungi' },
-                        { action: 'close', title: 'Tutup' }
-                     ]
-                  }
-                  reg.showNotification('Data Mahasiswa', options);
-               })
-            }
-         }
-
-         $(document).on('click', '.btnn-notif', function(){
-            displayNotification();
-         });
-
-      });
-   </script>
    <script src="sw.js"></script>
 </body>
 </html>

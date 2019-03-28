@@ -1,0 +1,36 @@
+body {
+    background-color: #003d4d;
+}
+label, a {
+    color: #ffffff;
+}
+
+.title {
+    color: #ffffff;
+    padding : 30px 30px;
+}
+
+input {
+    background-color: #002933;
+}
+
+.btn {
+    text-align: center;
+    background-color : #002933;
+    color: #ffffff;
+    align-items: center;
+}
+
+#Email {
+    background-color: #002933;
+    border: 0;
+}
+
+#Password {
+    background-color: #002933;
+    border: 0;
+}
+
+a {
+    text-align: right;
+}
